@@ -1,4 +1,11 @@
 
+# 🤖 MCP AWS Bot - AI-Powered DevOps Assistant
+
+
+
+
+
+
 ## 🚀 Overview
 
 MCP AWS Bot is an intelligent DevOps automation tool that allows you to manage AWS EC2 instances using **natural language commands**. Built with FastAPI and AWS SDK (boto3), it provides both a REST API and a beautiful chat interface.
@@ -20,12 +27,12 @@ MCP AWS Bot is an intelligent DevOps automation tool that allows you to manage A
 ```
 ┌─────────────┐     ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
 │   Browser   │────▶│   FastAPI   │────▶│   Agent     │────▶│   AWS SDK   │
-│  (Web UI)   │◀────│  (main.py)  │◀────│  (agent.py) │◀────│ (boto3)     │
+│  (Web UI)   │◀────│  (main.py)  │◀────│  (agent.py) │◀────│  (boto3)    │
 └─────────────┘     └─────────────┘     └─────────────┘     └──────┬──────┘
-                                                                   │
-                                                              ┌────▼──────┐
-                                                              │  AWS EC2  │
-                                                              └───────────┘
+                                                                    │
+                                                               ┌────▼──────┐
+                                                               │  AWS EC2  │
+                                                               └───────────┘
 ```
 
 ## 📋 Prerequisites
@@ -40,8 +47,8 @@ MCP AWS Bot is an intelligent DevOps automation tool that allows you to manage A
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/mcp-aws-bot.git
-cd mcp-aws-bot
+git clone https://github.com/kishorehc/MCP-AWS-BOT-AUTO-CREAT-EC2.git
+cd MCP-AWS-BOT-AUTO-CREAT-EC2
 ```
 
 ### 2. Install Dependencies
@@ -61,7 +68,7 @@ Enter your credentials:
 - **AWS Secret Access Key**: Your secret key
 - **Default region name**: `ap-south-1` (or your preferred region)
 - **Default output format**: `json`
-
+<img width="3719" height="1787" alt="Screenshot 2026-04-21 025711" src="https://github.com/user-attachments/assets/36abecf8-bf82-4515-97bf-12eb13140773" />
 ### 4. Run the Application
 
 ```bash
@@ -87,7 +94,7 @@ Navigate to: `http://127.0.0.1:8000`
 | `terminate i-123456789` | Delete instance by ID |
 
 ### Example Workflow
-
+<img width="3714" height="1753" alt="Screenshot 2026-04-21 025720" src="https://github.com/user-attachments/assets/903e911f-52e5-4256-b579-0ffab163864b" />
 ```bash
 # Create a named instance
 > create EC2 instance named Production
@@ -96,6 +103,9 @@ Navigate to: `http://127.0.0.1:8000`
 ✅ EC2 Created!
    ID: i-0a1b2c3d4e5f67890
    Name: Production
+
+
+
 
 # List all instances
 > list my EC2 instances
@@ -106,10 +116,12 @@ Navigate to: `http://127.0.0.1:8000`
 # Terminate by name
 > terminate Production
 ```
+<img width="3724" height="1909" alt="Screenshot 2026-04-21 025731" src="https://github.com/user-attachments/assets/8e21ae5a-0036-4f18-8a9e-360f75ebcecb" />
+<img width="3708" height="1918" alt="Screenshot 2026-04-21 030051" src="https://github.com/user-attachments/assets/7770e940-ca52-4050-8f31-8a00b6679703" />
 
 ### API Endpoints
 
-#### GET `/` 
+#### GET `/`
 Returns the web interface.
 
 #### POST `/chat?prompt={command}`
@@ -130,19 +142,17 @@ curl -X POST 'http://localhost:8000/chat?prompt=list%20my%20EC2%20instances'
 ## 📁 Project Structure
 
 ```
-mcp-aws-bot/
+MCP-AWS-BOT-AUTO-CREAT-EC2/
 ├── main.py              # FastAPI server & web interface
 ├── agent.py             # Natural language processing
 ├── aws_tools.py         # AWS EC2 operations
 ├── index.html           # Web UI
 ├── requirements.txt     # Python dependencies
-├── .gitignore          # Git ignore file
-└── README.md           # Documentation
+├── .gitignore           # Git ignore file
+└── README.md            # Documentation
 ```
 
-## 📦 Requirements File
-
-Create `requirements.txt`:
+## 📦 Requirements
 
 ```txt
 fastapi==0.136.0
@@ -174,7 +184,7 @@ Your IAM user needs these permissions:
 }
 ```
 
-Attach `AmazonEC2FullAccess` policy for simplicity.
+> Alternatively, attach the `AmazonEC2FullAccess` managed policy for simplicity.
 
 ## 🛡️ Security Best Practices
 
@@ -186,6 +196,13 @@ Attach `AmazonEC2FullAccess` policy for simplicity.
 | ✅ Enable MFA on AWS account | Extra security layer |
 | ✅ Review CloudTrail logs | Audit all API calls |
 
+## 🔐 Security Note
+
+**No credentials are stored in this repository.**
+- AWS credentials are stored locally in `~/.aws/credentials`
+- OpenAI keys (if used) go in `.env` which is gitignored
+- Your keys remain on your local machine only
+
 ## 🐛 Troubleshooting
 
 ### Error: "Unable to locate credentials"
@@ -196,10 +213,10 @@ aws configure
 
 ### Error: "Instance type not available"
 
-Update instance type in `aws_tools.py`:
+Update the instance type in `aws_tools.py`:
 
 ```python
-InstanceType='t3.micro'  # or t2.micro based on your region
+InstanceType='t3.micro'  # or t2.micro depending on your region
 ```
 
 ### Error: "Connection refused"
@@ -212,7 +229,7 @@ uvicorn main:app --reload
 
 ### Error: "InvalidParameterCombination"
 
-The instance type is not available in your region. Run:
+The instance type may not be available in your region. Run:
 
 ```bash
 aws ec2 describe-instance-types --filters Name=free-tier-eligible,Values=true --region ap-south-1
@@ -241,10 +258,25 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📄 License
 
-MIT License - feel free to use this project for learning or production!
+MIT License — feel free to use this project for learning or production!
 
 ## 🙏 Acknowledgments
 
 - AWS for the free tier
 - FastAPI for the amazing framework
 - All contributors and testers
+
+## 📧 Connect with Me
+
+- **GitHub**: [github.com/kishorehc](https://github.com/kishorehc)
+- **Project Link**: [github.com/kishorehc/MCP-AWS-BOT-AUTO-CREAT-EC2](https://github.com/kishorehc/MCP-AWS-BOT-AUTO-CREAT-EC2)
+
+---
+
+## ⭐ Show Your Support
+
+If this project helped you, please give it a ⭐ on GitHub!
+
+---
+
+**Built with ❤️ for DevOps automation**
