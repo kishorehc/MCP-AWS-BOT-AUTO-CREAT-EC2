@@ -116,8 +116,6 @@ Navigate to: `http://127.0.0.1:8000`
 # Terminate by name
 > terminate Production
 ```
-<img width="3724" height="1909" alt="Screenshot 2026-04-21 025731" src="https://github.com/user-attachments/assets/8e21ae5a-0036-4f18-8a9e-360f75ebcecb" />
-<img width="3708" height="1918" alt="Screenshot 2026-04-21 030051" src="https://github.com/user-attachments/assets/7770e940-ca52-4050-8f31-8a00b6679703" />
 
 ### API Endpoints
 
@@ -131,6 +129,8 @@ Execute commands programmatically.
 ```bash
 curl -X POST 'http://localhost:8000/chat?prompt=list%20my%20EC2%20instances'
 ```
+<img width="3724" height="1909" alt="Screenshot 2026-04-21 025731" src="https://github.com/user-attachments/assets/8e21ae5a-0036-4f18-8a9e-360f75ebcecb" />
+<img width="3708" height="1918" alt="Screenshot 2026-04-21 030051" src="https://github.com/user-attachments/assets/7770e940-ca52-4050-8f31-8a00b6679703" />
 
 **Response:**
 ```json
