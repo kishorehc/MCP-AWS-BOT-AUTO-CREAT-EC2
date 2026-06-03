@@ -2,7 +2,6 @@ import boto3
 
 ec2 = boto3.client('ec2')
 
-
 def find_instance_by_name(instance_name):
     """Find instance ID by its Name tag"""
     try:
