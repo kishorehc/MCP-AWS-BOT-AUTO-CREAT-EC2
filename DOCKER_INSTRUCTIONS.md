@@ -45,7 +45,7 @@ C:\mcp-aws-bot\
 Open **PowerShell** and navigate to your project folder:
 
 ```powershell
-cd C:\mcp-aws-bot
+cd C:\mcp-aws-bot (path where the project is installedon local)
 ```
 
 Build the image:
@@ -82,6 +82,7 @@ aa4ff88d31711bfee1f840cf85779405685fc13b
 ```
 
 ---
+<img width="3839" height="2032" alt="Screenshot 2026-06-03 235015" src="https://github.com/user-attachments/assets/a6082ee7-3cc9-41cf-8ea8-98e94b5055de" />
 
 ## ✅ Step 4 — Verify It's Running
 
@@ -130,6 +131,7 @@ docker run -d -p 8000:8000 --name mcp-aws-bot -e AWS_ACCESS_KEY_ID=NEW_KEY -e AW
 ```
 
 No rebuild needed — same image, just new credentials.
+<img width="3839" height="2036" alt="Screenshot 2026-06-03 234813" src="https://github.com/user-attachments/assets/91985c71-e4ed-4033-b4b9-bafe0a1e3036" />
 
 ---
 
@@ -150,6 +152,10 @@ If you stopped it and want to start again:
 ```powershell
 docker run -d -p 8000:8000 --name mcp-aws-bot -e AWS_ACCESS_KEY_ID=YOUR_KEY -e AWS_SECRET_ACCESS_KEY=YOUR_SECRET -e AWS_DEFAULT_REGION=ap-south-1 mcp-aws-bot
 ```
+<img width="3839" height="2035" alt="Screenshot 2026-06-03 234825" src="https://github.com/user-attachments/assets/4448e41a-5ae4-4515-85fa-f95baca29c5a" />
+
+<img width="3839" height="2159" alt="Screenshot 2026-06-03 234945" src="https://github.com/user-attachments/assets/701e505e-2292-4cd6-85f5-939045c46a09" />
+
 
 ---
 
@@ -190,3 +196,5 @@ docker run -d -p 8000:8000 --name mcp-aws-bot -e AWS_ACCESS_KEY_ID=YOUR_KEY -e A
 ---
 
 **Built with ❤️ for DevOps automation**
+**KISHORE HC**
+**kishorehc99@gmail.com**
